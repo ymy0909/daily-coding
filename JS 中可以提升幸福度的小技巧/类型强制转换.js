@@ -90,3 +90,46 @@ Math.ceil(4.5)       // 5
 Math.floor(-4.5)     // -5
 Math.ceil(-4.5)      // -4
 
+
+/**
+* @module 类型强制转换
+* @author: ymy
+* @description:短路运算符
+* @since: 创建时间  2020-04-20 09:12:18
+*/
+// &&为取假运算，从左到右依次判断，如果遇到一个假值，就返回假值，以后不再执行，否则返回最后一个真值
+// ||为取真运算，从左到右依次判断，如果遇到一个真值，就返回真值，以后不再执行，否则返回最后一个假值
+
+// let param1 = expr1 && expr2
+// let param2 = expr1 || expr2
+
+let variable1
+let variable2 = variable1  || 'foo'//如果variable1是真值就直接返回了，后面短路就不会被返回了，如果为假值，则会返回后面的foo。
+
+let param
+let variable = param && param.prop//如果param如果为真值则返回param.prop属性，否则返回param这个假值，这样在某些地方防止param为undefined的时候还取其属性造成报错。
+
+
+/**
+* @module 类型强制转换
+* @author: ymy
+* @description:1.6 取整 | 0
+* @since: 创建时间  2020-04-20 09:38:03
+*/
+1.3 | 0         // 1
+-1.9 | 0        // -1
+
+
+/**
+* @module 类型强制转换
+* @author: ymy
+* @description:1.7 判断奇偶数 & 1
+* @since: 创建时间  2020-04-20 09:38:36
+*/
+
+const num=4;
+!!(num & 1)                    // true
+// !!(num % 2)                    // true
+
+console.log('是不是奇数', !!(num & 1))
+// console.log('是不是偶数', !!(num % 2))
