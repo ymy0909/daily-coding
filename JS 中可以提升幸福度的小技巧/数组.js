@@ -95,3 +95,25 @@ depth 只能平铺到 1 (单层平铺) 的深度。
 * @since: 创建时间  2020-04-20 15:24:36
 */
 
+const flatten = (arr, depth = 1) =>
+  depth != 1
+    ? arr.reduce((a, v) => a.concat(Array.isArray(v) ? flatten(v, depth - 1) : v), [])
+    : arr.reduce((a, v) => a.concat(v), []);
+flatten([1, [2], 3, 4]);                             // [1, 2, 3, 4]
+flatten([1, [2, [3, [4, 5], 6], 7], 8], 2);           // [1, 2, 3, [4, 5], 6, 7, 8]
+
+
+/**
+* @module 数组
+* @author: ymy
+* @description:
+5.6 数组的对象解构
+数组也可以对象解构，可以方便的获取数组的第n个值
+* @since: 创建时间  2020-04-20 21:10:23
+*/
+const csvFileLine = '1997,John Doe,US,john@doe.com,New York';
+const { 2: country, 4: state } = csvFileLine.split(',');
+ 
+country            // US
+state            // New Yourk
+

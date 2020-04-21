@@ -1,0 +1,52 @@
+ul{
+  list-style: none;
+  padding-left: 0;
+}
+body{
+  padding: 0;
+  margin: 0;
+}
+#sidebar{
+  width: 35px;
+  background-color: #e1e1e1;
+  padding-top: 200px;
+  position: fixed;
+  min-height: 100%;
+  box-sizing: border-box;
+  z-index: 100;
+}
+.item{
+  font-size: 12px;
+  font-family: 'Microsoft Yahei';
+  text-align: center;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.closeBar{
+  position: absolute;
+  bottom: 30px;
+  width: 35px;
+  text-align: center;
+  cursor: pointer;
+}
+.nav-content{
+  width: 200px;
+  position: fixed;
+  min-height: 100%;
+  left: 0;
+  top: 0;
+  background-color: #e1e1e1;
+  border-right: 1px solid black;
+  box-sizing: border-box;
+  padding: 24px 24px 24px 59px;
+  z-index: 99;
+  opacity: 0;
+}
+.nav-close{
+  cursor: pointer;
+  position: absolute;
+  right: 24px;
+}
+.nav-close i{
+  font-weight: bold;
+}
